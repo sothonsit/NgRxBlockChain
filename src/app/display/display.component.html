@@ -1,0 +1,26 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{ title }}
+      </div>
+      <div class="panel-body">
+            <table class="table table-hover" *ngIf="coins!= 0">
+                <thead>
+                <tr>
+                    <td>Coin Name</td>
+                    <td>Coin Price</td>
+                    <td>Delete</td>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let coin of coins | async">
+                        <td>{{ coin.name }}</td>
+                        <td>{{ coin.price }}</td>
+                        <td>
+                            <button type="button" class="btn btn-danger btn-sm" (click)="onDelete(coin)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+      </div>
+</div>
+
